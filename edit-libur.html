@@ -116,11 +116,11 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Data Libur</h3> </div>
+                    <h3 class="text-primary">Ubah Libur</h3> </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                        <li class="breadcrumb-item active">Data Libur</li>
+                        <li class="breadcrumb-item active">Ubah Libur</li>
                     </ol>
                 </div>
             </div>
@@ -129,47 +129,35 @@
             <div class="container-fluid">
                 <!-- Start Page Content -->
                 <div class="card">
+                    <div class="card-title">
+                        <h4>Ubah Record Libur</h4>
+                        <p class="text-muted m-b-15 f-s-12">Ubah data libur ke dalam sistem.</p>
+                    </div>
                     <div class="card-body">
-                        <div class="pull-left">
-                            <h4 class="card-title">Data Libur</h4>
-                            <h6 class="card-subtitle">Merupakan list dari jatah libur dari karyawan</h6>
+                        <div class="basic-form">
+                            <form method="POST" action="">
+                                <div class="form-group">
+                                    <p class="">Nama</p>
+                                    <input name="nama" type="text" class="form-control input-default " value="Nama">
+                                </div>
+                                <div class="form-group">
+                                    <p class="">Tanggal</p>
+                                    <input name="tanggal" type="date" class="form-control input-default " value="Tanggal">
+                                </div>
+                                <div class="form-group">
+                                    <p class="">Tanggal Akhir</p>
+                                    <input name="tgl_akhir" type="date" class="form-control input-default " value="Tanggal Akhir">
+                                </div>
+                                <div class="form-group">
+                                    <p class="">Lama Hari</p>
+                                    <input name="lama_hari" type="text" class="form-control input-default " value="Lama Hari">
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" name="submit" value="Tambah" class="btn btn-primary form-control">
+                                </div>
+                            </form>
                         </div>
-                        <a href="add-libur.html"><button type="button" class="btn btn-primary pull-right">Tambah Record</button></a>
-                        <div class="table-responsive m-t-40">
-                        <table id="myTable" class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Nama</th>
-                                    <th>Tanggal</th>
-                                    <th>Lama Hari</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Lebaran Idul Fitri</td>
-                                    <td>15 Juli 2018</td>
-                                    <td>7 Hari</td>
-                                    <td>
-                                        <a href="" type="button" class="btn btn-warning">Ubah</a>
-                                        <a id="del" href="" type="button" class="btn btn-danger">Hapus</a>
-                                    </td>
-                                </tr> 
-                                <tr>
-                                    <td>2</td>
-                                    <td>Lebaran Idul Adha</td>
-                                    <td>22 Agustus 2018</td>
-                                    <td>1 Hari</td>
-                                    <td>
-                                        <a href="" type="button" class="btn btn-warning">Ubah</a>
-                                        <a id="del" href="" type="button" class="btn btn-danger">Hapus</a>
-                                    </td>
-                                </tr>   
-                            </tbody>
-                        </table>
-                        </div>
+                    </div>
                 </div>
             </div>
                 <!-- End PAge Content -->
@@ -220,36 +208,6 @@
     <!-- scripit init-->
 
     <script src="js/custom.min.js"></script>
-
-    <script src="js/lib/datatables/datatables.min.js"></script>
-    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-    <script src="js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
-    <!-- <script src="js/lib/datatables/datatables-init.js"></script> -->
-
-    <script type="text/javascript">
-        $(document).ready( function () {
-          $('#myTable').DataTable();
-      });
-    </script>
-
-    <script type="text/javascript">
-        $('#del').click( function () {
-            if (confirm( "Are you sure you want to delete the selected rows?" )){
-                /*$.ajax( {
-                    "url": "/delete_row.php",
-                    "data": { "ids": selectedIds },
-                    "dataType": "json",
-                    "type": "post",
-                    "success": function () {}
-                });*/
-            }
-        });
-    </script>
 
 </body>
 

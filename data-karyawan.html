@@ -130,11 +130,13 @@
                 <!-- Start Page Content -->
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Data Karyawan</h4>
-                        <h6 class="card-subtitle">Merupakan list dari karyawan yang berada dalam suatu perusahaan</h6>
-                        <button type="button" class="btn btn-primary pull-right">Tambah Record</button>
+                        <div class="pull-left">
+                            <h4 class="card-title">Data Karyawan</h4>
+                            <h6 class="card-subtitle">Merupakan list dari karyawan yang berada dalam suatu perusahaan</h6>
+                        </div>
+                        <a href="add-karyawan.html"><button type="button" class="btn btn-primary pull-right">Tambah Record</button></a>
                         <div class="table-responsive m-t-40">
-                        <table id="myTable" class="table table-hover table-striped">
+                        <table id="myTable" class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>NIK</th>
@@ -153,8 +155,8 @@
                                     <td>Cleaning Service</td>
                                     <td>Kebersihan</td>
                                     <td>
-                                        <a href="" type="button" class="btn btn-warning">Ubah</a>
-                                        <a href="" type="button" class="btn btn-danger">Hapus</a>
+                                        <a href="edit-karyawan.html" type="button" class="btn btn-warning">Ubah</a>
+                                        <a id="del" href="" type="button" class="btn btn-danger">Hapus</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -164,8 +166,8 @@
                                     <td>Manager</td>
                                     <td>Direksi</td>
                                     <td>
-                                        <a href="" type="button" class="btn btn-warning">Ubah</a>
-                                        <a href="" type="button" class="btn btn-danger">Hapus</a>
+                                        <a href="edit-karyawan.html" type="button" class="btn btn-warning">Ubah</a>
+                                        <a id="del" href="" type="button" class="btn btn-danger">Hapus</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -197,6 +199,11 @@
     <!--stickey kit -->
     <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
+
+    <!-- SweetAlert -->
+    <script src="js/lib/sweetalert/sweetalert.min.js"></script>
+    <!-- scripit init-->
+    <script src="js/lib/sweetalert/sweetalert.init.js"></script>
 
 
     <!-- Amchart -->
@@ -236,6 +243,20 @@
         $(document).ready( function () {
           $('#myTable').DataTable();
       });
+    </script>
+
+    <script type="text/javascript">
+        $('#del').click( function () {
+            if (confirm( "Are you sure you want to delete the selected rows?" )){
+                /*$.ajax( {
+                    "url": "/delete_row.php",
+                    "data": { "ids": selectedIds },
+                    "dataType": "json",
+                    "type": "post",
+                    "success": function () {}
+                });*/
+            }
+        });
     </script>
 
 </body>

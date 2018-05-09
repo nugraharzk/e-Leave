@@ -130,11 +130,13 @@
                 <!-- Start Page Content -->
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Data Relasi Karyawan</h4>
-                        <h6 class="card-subtitle">Merupakan list dari relasi karyawan yang berada dalam suatu perusahaan</h6>
-                        <button type="button" class="btn btn-primary pull-right">Tambah Record</button>
+                        <div class="pull-left">
+                            <h4 class="card-title">Data Relasi Karyawan</h4>
+                            <h6 class="card-subtitle">Merupakan list dari relasi karyawan yang berada dalam suatu perusahaan</h6>
+                        </div>
+                        <a href="add-relasi.html"><button type="button" class="btn btn-primary pull-right">Tambah Record</button></a>
                         <div class="table-responsive m-t-40">
-                        <table id="myTable" class="table table-hover table-striped">
+                        <table id="myTable" class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -150,7 +152,7 @@
                                     <td>987654321</td>
                                     <td>
                                         <a href="" type="button" class="btn btn-warning">Ubah</a>
-                                        <a href="" type="button" class="btn btn-danger">Hapus</a>
+                                        <a id="del" href="" type="button" class="btn btn-danger">Hapus</a>
                                     </td>
                                 </tr>   
                             </tbody>
@@ -223,6 +225,19 @@
       });
     </script>
 
+    <script type="text/javascript">
+        $('#del').click( function () {
+            if (confirm( "Are you sure you want to delete the selected rows?" )){
+                /*$.ajax( {
+                    "url": "/delete_row.php",
+                    "data": { "ids": selectedIds },
+                    "dataType": "json",
+                    "type": "post",
+                    "success": function () {}
+                });*/
+            }
+        });
+    </script>
 </body>
 
 </html>
